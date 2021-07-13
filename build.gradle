@@ -1,0 +1,35 @@
+plugins {
+    id 'application'
+}
+apply plugin : "java"
+
+ext {
+    javaMainClass = 'com.adarsh.DiceGameApplication'
+}
+run {
+    standardInput = System.in
+}
+
+application {
+    mainClassName = javaMainClass
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+mainClassName = 'main.java.com.adarsh.DiceGameApplication'
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testCompile "org.mockito:mockito-inline:+"
+    testImplementation 'org.mockito:mockito-junit-jupiter:+'
+}
+
+test {
+    useJUnitPlatform()
+}
